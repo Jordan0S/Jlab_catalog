@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JLab - Catálogo de Servicios Digitales y Desarrollo de Software</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                            950: '#172554',
+                        },
+                        accent: {
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles & Print Fixes -->
+    <style>
+        body {
+            background-color: #f8fafc;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Blob Background for Header */
+        .bg-pattern {
+            background-image: radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.08), transparent 25%),
+                              radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.08), transparent 25%);
+        }
+
+        /* Glassmorphism effects */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Print Optimizations */
+        @media print {
+            body { background: white !important; padding: 0 !important; }
+            .print-no-shadow { box-shadow: none !important; }
+            .print-break-inside-avoid { page-break-inside: avoid; break-inside: avoid; }
+            .print-border { border: 1px solid #e2e8f0 !important; }
+            .no-print { display: none !important; }
+            .hero-bg { background: #1e3a8a !important; color: white !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .policy-bg { background: #fffbeb !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .partner-bg { background: #0f172a !important; color: white !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body class="text-slate-800 p-4 md:p-8">
+
+<div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden print-no-shadow print-border fade-in">
+    
+    <!-- HEADER / HERO SECTION -->
+    <header class="hero-bg bg-gradient-to-br from-brand-900 via-brand-800 to-accent-600 p-12 md:p-16 text-center relative overflow-hidden bg-pattern">
+        <!-- Decorative SVG Top Right -->
+        <svg class="absolute top-0 right-0 text-white/10 w-64 h-64 transform translate-x-16 -translate-y-16" fill="currentColor" viewBox="0 0 100 100">
+            <path d="M50 0L100 50L50 100L0 50Z"></path>
+        </svg>
+        
+        <div class="relative z-10">
+            <div class="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-white/10 backdrop-blur-md mb-6 shadow-lg border border-white/20">
+                <i class="fa-solid fa-code text-4xl text-white"></i>
+            </div>
+            <h1 class="font-heading text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-2 shadow-sm">
+                JLab <span class="text-brand-100 font-light">Consulting</span>
+            </h1>
+            <p class="font-heading text-lg md:text-xl text-brand-100 tracking-widest uppercase mb-6 font-semibold">
+                Desarrollo de Software & Arquitectura Digital
+            </p>
+            <div class="inline-block bg-white/10 backdrop-blur-md border border-white/20 text-white py-3 px-6 rounded-full text-sm md:text-base">
+                <i class="fa-solid fa-rocket mr-2 text-accent-500"></i> Soluciones escalables, automatización e IA para negocios de alto rendimiento.
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENT WRAPPER -->
+    <div class="p-8 md:p-12 space-y-16">
+
+        <!-- 1. PORTAFOLIO -->
+        <section class="print-break-inside-avoid">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-lg bg-brand-100 flex items-center justify-center text-brand-600 text-xl">
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <h2 class="font-heading text-2xl md:text-3xl font-bold text-slate-900">Portafolio de Proyectos</h2>
+            </div>
+            <p class="text-slate-600 mb-8 text-lg">Casos de éxito desarrollados con altos estándares de rendimiento, arquitectura responsiva y automatización.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Portfolio Card 1 -->
+                <div class="group bg-white rounded-xl border border-slate-200 p-6 hover:shadow-xl hover:border-brand-300 transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-500">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <a href="https://www.uv.mx/lactauv/" target="_blank" class="text-xs bg-slate-100 hover:bg-brand-100 hover:text-brand-700 text-slate-500 px-3 py-1 rounded-full transition-colors flex items-center gap-1">
+                            Visitar <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-slate-900 mb-2">Fundación LactaUV</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Plataforma institucional educativa. Módulos avanzados para gestión de cursos en línea, herramientas de evaluación y aplicación de exámenes automatizados.</p>
+                </div>
+                
+                <!-- Portfolio Card 2 -->
+                <div class="group bg-white rounded-xl border border-slate-200 p-6 hover:shadow-xl hover:border-brand-300 transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-500">
+                            <i class="fa-regular fa-building"></i>
+                        </div>
+                        <a href="https://duocapital.com.mx/" target="_blank" class="text-xs bg-slate-100 hover:bg-brand-100 hover:text-brand-700 text-slate-500 px-3 py-1 rounded-full transition-colors flex items-center gap-1">
+                            Visitar <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-slate-900 mb-2">Duo Capital</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Sitio web corporativo High-End sector inmobiliario. Proyección de marca, visualización de desarrollos de inversión y captación optimizada de prospectos.</p>
+                </div>
+                
+                <!-- Portfolio Card 3 -->
+                <div class="group bg-white rounded-xl border border-slate-200 p-6 hover:shadow-xl hover:border-brand-300 transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center text-purple-500">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <a href="https://iglesiacasadevida.org/" target="_blank" class="text-xs bg-slate-100 hover:bg-brand-100 hover:text-brand-700 text-slate-500 px-3 py-1 rounded-full transition-colors flex items-center gap-1">
+                            Visitar <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-slate-900 mb-2">Iglesia Casa de Vida</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Plataforma web comunitaria e institucional. Sistema integrado para administración e impartición de cursos digitales, multimedia y eventos.</p>
+                </div>
+                
+                <!-- Portfolio Card 4 -->
+                <div class="group bg-white rounded-xl border border-slate-200 p-6 hover:shadow-xl hover:border-brand-300 transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-orange-500">
+                            <i class="fa-solid fa-display"></i>
+                        </div>
+                        <a href="https://tuimagenglobal.com/" target="_blank" class="text-xs bg-slate-100 hover:bg-brand-100 hover:text-brand-700 text-slate-500 px-3 py-1 rounded-full transition-colors flex items-center gap-1">
+                            Visitar <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-slate-900 mb-2">Tu Imagen Global</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Sitio web empresarial B2B (Pantallas publicitarias). Estructurado para catálogos de gran formato y centralizar cotizaciones comerciales en tiempo real.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-slate-200">
+
+        <!-- 2. SERVICIOS WEB -->
+        <section>
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-lg bg-accent-100 flex items-center justify-center text-accent-600 text-xl">
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+                <h2 class="font-heading text-2xl md:text-3xl font-bold text-slate-900">Sitios Web y Presencia Digital</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                <!-- Service 1 -->
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 relative overflow-hidden print-break-inside-avoid">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-blue-100 to-transparent rounded-bl-full z-0"></div>
+                    <div class="relative z-10">
+                        <i class="fa-solid fa-plane-arrival text-2xl text-blue-500 mb-4"></i>
+                        <h3 class="font-heading font-bold text-lg mb-2">Landing Page</h3>
+                        <p class="text-sm text-slate-600 mb-4 h-16">Página de aterrizaje de alta conversión enfocada en la captación de clientes potenciales.</p>
+                        <div class="mt-auto inline-block bg-brand-900 text-white px-4 py-2 rounded-lg font-bold text-sm w-full text-center shadow-md">
+                            $4,000 MXN
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 relative overflow-hidden print-break-inside-avoid">
+                    <div class="relative z-10">
+                        <i class="fa-regular fa-id-card text-2xl text-brand-500 mb-4"></i>
+                        <h3 class="font-heading font-bold text-lg mb-2">Web Institucional</h3>
+                        <p class="text-sm text-slate-600 mb-4 h-16">Sitio corporativo completo para presentar identidad, servicios y catálogos de la empresa.</p>
+                        <div class="mt-auto inline-block bg-brand-900 text-white px-4 py-2 rounded-lg font-bold text-sm w-full text-center shadow-md">
+                            $8,000 MXN
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 relative overflow-hidden print-break-inside-avoid">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-emerald-100 to-transparent rounded-bl-full z-0"></div>
+                    <div class="relative z-10">
+                        <i class="fa-solid fa-cart-shopping text-2xl text-emerald-500 mb-4"></i>
+                        <h3 class="font-heading font-bold text-lg mb-2">Tienda en Línea</h3>
+                        <p class="text-sm text-slate-600 mb-4 h-16">E-commerce optimizado para gestión de productos, inventarios y procesamiento de pagos.</p>
+                        <div class="mt-auto inline-block bg-brand-900 text-white px-4 py-2 rounded-lg font-bold text-sm w-full text-center shadow-md">
+                            $15,000 MXN
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Includes -->
+            <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm mb-8 print-break-inside-avoid">
+                <h4 class="font-heading font-bold text-lg mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-green-500"></i> Todos los servicios web incluyen:
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-6">
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-brand-500 mt-1 text-sm"></i>
+                        <p class="text-sm text-slate-700"><strong>Dominio Corporativo:</strong> 1 año de registro (máx. $300 MXN).</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-brand-500 mt-1 text-sm"></i>
+                        <p class="text-sm text-slate-700"><strong>Diseño Responsivo:</strong> Adaptación total a móviles y escritorio.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-brand-500 mt-1 text-sm"></i>
+                        <p class="text-sm text-slate-700"><strong>Rondas de Cambios:</strong> Hasta 3 rondas previo al despliegue.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-brand-500 mt-1 text-sm"></i>
+                        <p class="text-sm text-slate-700"><strong>SEO Básico:</strong> Configuración para indexación en Google.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-brand-500 mt-1 text-sm"></i>
+                        <p class="text-sm text-slate-700"><strong>Analítica:</strong> Integración con Google Analytics y píxeles.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-brand-500 mt-1 text-sm"></i>
+                        <p class="text-sm text-slate-700"><strong>Automatización CRM:</strong> Conexión de formularios (Odoo, HubSpot).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Policies Alert Box -->
+            <div class="policy-bg bg-amber-50 border-l-4 border-amber-500 p-5 rounded-r-lg print-break-inside-avoid">
+                <h4 class="font-heading font-bold text-amber-800 text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Políticas y Condiciones (Desarrollo Web)
+                </h4>
+                <ul class="space-y-2 text-xs text-amber-900/80">
+                    <li class="flex gap-2"><i class="fa-solid fa-angle-right mt-1"></i> <span><strong>Propiedad del Código:</strong> El código fuente permanece bajo custodia y propiedad intelectual de JLab. El cliente adquiere exclusivamente el derecho de uso. La liberación de código fuente para administración externa conlleva un costo adicional del 50%.</span></li>
+                    <li class="flex gap-2"><i class="fa-solid fa-angle-right mt-1"></i> <span><strong>Costos Extra:</strong> Dominios superiores a $300 MXN o rondas de cambio que excedan las 3 incluidas, se facturarán por separado.</span></li>
+                    <li class="flex gap-2"><i class="fa-solid fa-angle-right mt-1"></i> <span><strong>Modificaciones Post-Despliegue:</strong> Los ajustes posteriores a la entrega final se integran al plan de mantenimiento mensual, no a las rondas de desarrollo inicial.</span></li>
+                    <li class="flex gap-2"><i class="fa-solid fa-angle-right mt-1"></i> <span><strong>Terceros:</strong> Comisiones de pasarelas de pago (Stripe, PayPal) o licencias premium anuales de terceros no están incluidas en las cotizaciones de tienda online.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <hr class="border-slate-200">
+
+        <!-- 3. SERVICIOS MENSUALES -->
+        <section>
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 text-xl">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h2 class="font-heading text-2xl md:text-3xl font-bold text-slate-900">Servicios Mensuales</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <!-- Monthly 1 -->
+                <div class="border border-slate-200 rounded-xl p-6 bg-white hover:border-emerald-300 transition-colors print-break-inside-avoid">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-heading font-bold text-xl text-slate-800">Mantenimiento Web</h3>
+                        <span class="bg-emerald-100 text-emerald-800 font-bold px-3 py-1 rounded-lg text-sm border border-emerald-200">$500 / Mes</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4">Garantiza la continuidad operativa, seguridad y disponibilidad de la plataforma.</p>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Actualización de servidor (seguridad).</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Respaldos periódicos de datos.</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Monitoreo de integridad 24/7.</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Bolsa de 2 horas/mes para cambios menores.</li>
+                    </ul>
+                </div>
+
+                <!-- Monthly 2 -->
+                <div class="border border-slate-200 rounded-xl p-6 bg-white hover:border-emerald-300 transition-colors print-break-inside-avoid">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-heading font-bold text-xl text-slate-800">Soporte e Integraciones</h3>
+                        <span class="bg-slate-100 text-slate-800 font-bold px-3 py-1 rounded-lg text-sm border border-slate-200">Cotización a medida</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4">Asegura el funcionamiento ininterrumpido de conexiones lógicas con software externo.</p>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Monitoreo de flujos de datos API.</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Supervisión de pasarelas de pago.</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Sincronización de correos corporativos.</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Resolución de incidencias de latencia.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Policies Alert Box -->
+            <div class="policy-bg bg-slate-50 border-l-4 border-slate-400 p-5 rounded-r-lg print-break-inside-avoid">
+                <h4 class="font-heading font-bold text-slate-700 text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-circle-info"></i> Condiciones de Mantenimiento
+                </h4>
+                <ul class="space-y-2 text-xs text-slate-600">
+                    <li class="flex gap-2"><i class="fa-solid fa-angle-right mt-1"></i> <span><strong>Garantía:</strong> 30 días posteriores a la entrega. Sin un plan de mantenimiento vigente, JLab no asume responsabilidad por hackeos, desactualizaciones o errores derivados de la manipulación externa del sitio.</span></li>
+                    <li class="flex gap-2"><i class="fa-solid fa-angle-right mt-1"></i> <span><strong>Bolsa de horas:</strong> Excedente a las 2 horas mensuales se facturará por hora adicional. Las horas no son acumulables.</span></li>
+                    <li class="flex gap-2"><i class="fa-solid fa-angle-right mt-1"></i> <span><strong>Saturación:</strong> El tráfico masivo que requiera escalamiento de infraestructura (Hosting/VPS) se facturará según los requerimientos del cliente.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <hr class="border-slate-200">
+
+        <!-- 4. CONSULTORÍA ESPECIALIZADA -->
+        <section>
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600 text-xl">
+                    <i class="fa-solid fa-microchip"></i>
+                </div>
+                <h2 class="font-heading text-2xl md:text-3xl font-bold text-slate-900">Desarrollo de Software e IA</h2>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Advanced 1 -->
+                <div class="flex flex-col md:flex-row gap-6 bg-white p-6 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow print-break-inside-avoid">
+                    <div class="md:w-1/4 flex flex-col items-start">
+                        <div class="bg-indigo-50 w-12 h-12 rounded-full flex items-center justify-center text-indigo-500 mb-3 text-xl">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg leading-tight">Consultoría Arquitectura</h3>
+                        <div class="mt-3 bg-brand-900 text-white px-3 py-1 rounded text-sm font-bold">$500 MXN / hr</div>
+                    </div>
+                    <div class="md:w-3/4 flex items-center">
+                        <p class="text-slate-600 text-sm leading-relaxed">Asesoría técnica estratégica para el diseño de infraestructura Cloud, análisis de requerimientos técnicos complejos y optimización de sistemas empresariales existentes.</p>
+                    </div>
+                </div>
+
+                <!-- Advanced 2 -->
+                <div class="flex flex-col md:flex-row gap-6 bg-white p-6 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow print-break-inside-avoid">
+                    <div class="md:w-1/4 flex flex-col items-start">
+                        <div class="bg-indigo-50 w-12 h-12 rounded-full flex items-center justify-center text-indigo-500 mb-3 text-xl">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg leading-tight">Sistemas a la Medida</h3>
+                        <div class="mt-3 bg-slate-100 text-slate-700 border border-slate-200 px-3 py-1 rounded text-sm font-bold">Por Proyecto</div>
+                    </div>
+                    <div class="md:w-3/4">
+                        <p class="text-slate-600 text-sm mb-3">Ingeniería de ecosistemas digitales robustos y multiplataforma.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded">Node.js / Spring Boot</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded">React / Angular / Flutter</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded">PostgreSQL / MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced 3 -->
+                <div class="flex flex-col md:flex-row gap-6 bg-gradient-to-r from-brand-900 to-indigo-900 p-6 rounded-xl border border-transparent shadow-xl text-white print-break-inside-avoid print-border">
+                    <div class="md:w-1/4 flex flex-col items-start">
+                        <div class="bg-white/10 w-12 h-12 rounded-full flex items-center justify-center text-accent-400 mb-3 text-xl border border-white/20">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-lg leading-tight">Inteligencia Artificial & RPA</h3>
+                        <div class="mt-3 bg-accent-500 text-white px-3 py-1 rounded text-sm font-bold shadow-md">Por Proyecto</div>
+                    </div>
+                    <div class="md:w-3/4">
+                        <p class="text-brand-100 text-sm mb-4">Automatización de procesos y agentes inteligentes para interactuar con datos corporativos.</p>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-white/90">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-bolt text-accent-400 mt-1"></i> Arquitecturas RAG & LLMs.</li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-bolt text-accent-400 mt-1"></i> Automatización RPA.</li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-bolt text-accent-400 mt-1"></i> APIs (REST/GraphQL).</li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-bolt text-accent-400 mt-1"></i> Cloud (Azure, GCP, Docker).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Policies Alert Box -->
+            <div class="policy-bg bg-amber-50 border-l-4 border-amber-500 p-5 rounded-r-lg mt-6 print-break-inside-avoid">
+                <h4 class="font-heading font-bold text-amber-800 text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-scale-balanced"></i> Políticas de Proyectos Avanzados
+                </h4>
+                <ul class="space-y-2 text-xs text-amber-900/80 grid grid-cols-1 md:grid-cols-2 gap-x-6">
+                    <li class="flex gap-2"><i class="fa-solid fa-angle-right mt-1"></i> <span><strong>Custodia de Código:</strong> La entrega total y documentación técnica requiere un recargo del 50% sobre el valor del proyecto.</span></li>
+                    <li class="flex gap-2"><i class="fa-solid fa-angle-right mt-1"></i> <span><strong>Scope Creep:</strong> Funciones no estipuladas en el documento de requerimientos inicial generarán una orden de cambio adicional.</span></li>
+                    <li class="flex gap-2"><i class="fa-solid fa-angle-right mt-1"></i> <span><strong>Costos Cloud/APIs:</strong> Consumo de tokens IA (OpenAI), servidores o bases de datos se facturan directamente a las cuentas del cliente.</span></li>
+                    <li class="flex gap-2"><i class="fa-solid fa-angle-right mt-1"></i> <span><strong>Garantía:</strong> El soporte de algoritmos de IA post-entrega requiere póliza mensual. JLab no cubre fallas causadas por la interrupción de APIs de terceros.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 5. GUÍA SOCIO COMERCIAL (INTERNAL) -->
+        <section class="partner-bg bg-slate-900 text-slate-300 rounded-2xl p-8 md:p-10 mt-12 shadow-inner border border-slate-800 print-break-inside-avoid">
+            <div class="flex items-center gap-4 mb-6 border-b border-slate-700 pb-6">
+                <div class="w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center text-amber-500 text-xl border border-slate-700">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+                <div>
+                    <h2 class="font-heading text-2xl font-bold text-white">Guía Comercial Interna</h2>
+                    <p class="text-sm text-slate-400">Lineamientos exclusivos para prospección y cierre.</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Col 1 -->
+                <div>
+                    <h3 class="text-white font-bold mb-4 flex items-center gap-2"><i class="fa-solid fa-gavel text-amber-500"></i> Reglas de Oro</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="bg-slate-800/50 p-3 rounded border border-slate-700/50"><strong class="text-white block mb-1">Propiedad Intelectual:</strong> Aplicar +50% al presupuesto si el cliente solicita la entrega del código fuente.</li>
+                        <li class="bg-slate-800/50 p-3 rounded border border-slate-700/50"><strong class="text-white block mb-1">Garantía Limitada:</strong> 30 días. Se anula sin plan de mantenimiento si el cliente modifica el servidor.</li>
+                        <li class="bg-slate-800/50 p-3 rounded border border-slate-700/50"><strong class="text-white block mb-1">Rondas de Cambios:</strong> Máximo 3. Fomentar feedback consolidado para evitar dilación en el proyecto.</li>
+                    </ul>
+                </div>
+                
+                <!-- Col 2 -->
+                <div>
+                    <h3 class="text-white font-bold mb-4 flex items-center gap-2"><i class="fa-solid fa-bullseye text-blue-400"></i> Uso del Portafolio</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><strong class="text-blue-300">LactaUV:</strong> Escuelas, institutos, academias, e-learning.</li>
+                        <li><strong class="text-blue-300">Duo Capital:</strong> Bienes raíces, arquitectos, firmas High-Ticket.</li>
+                        <li><strong class="text-blue-300">Casa de Vida:</strong> ONGs, comunidades, creadores de contenido.</li>
+                        <li><strong class="text-blue-300">Tu Imagen Global:</strong> Industria, B2B, proveedores de equipo pesado.</li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h3 class="text-white font-bold mb-4 flex items-center gap-2"><i class="fa-solid fa-filter text-emerald-400"></i> Perfilamiento</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex flex-col gap-1">
+                            <span class="text-emerald-300 font-bold">Landing ($4k):</span>
+                            <span>Negocios locales, campañas de ads, producto único.</span>
+                        </li>
+                        <li class="flex flex-col gap-1">
+                            <span class="text-emerald-300 font-bold">Institucional ($8k):</span>
+                            <span>Pymes, corporativos, captación CRM, solidez de marca.</span>
+                        </li>
+                        <li class="flex flex-col gap-1">
+                            <span class="text-emerald-300 font-bold">Tienda ($15k):</span>
+                            <span>Comercio transaccional, tarjetas bancarias, inventario.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+<!-- Footer Simple -->
+<footer class="text-center text-slate-500 text-sm mt-12 mb-8 no-print">
+    <p>&copy; 2026 JLab Consulting. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
